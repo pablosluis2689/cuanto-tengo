@@ -9,9 +9,9 @@
 </div>
 </div>
 
-<div style=width:100%;max-width:360px;margin-top:14px><b>1. Cierre</b><button class=cd id=c-diario onclick="sc('diario',this)">📅 Diario</button><button class=cd id=c-semanal onclick="sc('semanal',this)">🗓️ Semanal</button><button class="cd a" id=c-mensual onclick="sc('mensual',this)">📆 Mensual</button><button class=cd id=c-anual onclick="sc('anual',this)">🗓️ Anual</button></div>
-<div style=width:100%;max-width:360px;margin-top:14px><b>2. Tope de gasto</b><div class=dl><input id=li type=number min=0 placeholder=50000><select id=lm><option value=bs>Bs</option><option value=usd>$</option></select></div><small id=vm style=color:#e63946;display:none></small>
-<button class=bm id=btnGuardarTope onclick="so()">💾 GUARDAR Y EMPEZAR CICLO</button>
+<div style=width:100%;max-width:360px;margin-top:14px><b>CIERRE</b><button class=cd id=c-diario onclick="sc('diario',this)">📅 Diario</button><button class=cd id=c-semanal onclick="sc('semanal',this)">🗓️ Semanal</button><button class="cd a" id=c-mensual onclick="sc('mensual',this)">📆 Mensual</button><button class=cd id=c-anual onclick="sc('anual',this)">🗓️ Anual</button></div>
+<div style=width:100%;max-width:360px;margin-top:14px><b>TOPE DE GASTO</b><div class=dl><input id=li type=number min=0 placeholder=50000><select id=lm><option value=bs>Bs</option><option value=usd>$</option></select></div><small id=vm style=color:#e63946;display:none></small>
+<button class=bm id=btnGuardarTope onclick="so()">💾 EMPEZAR CICLO</button>
 <div id=postConfig>
 <button class="bm sec" onclick="cs()">➜ Volver a Gastos</button>
 <button class=bm style="background:#fff3f3;border:2px solid #e63946;color:#e63946;box-shadow:none;margin-top:10px" onclick="resetApp()">🔴 Cerrar ciclo y empezar de 0</button>
@@ -41,24 +41,26 @@
 <button class=foto-btn onclick="ff.click()">🖼️ Foto factura (opcional)</button>
 <img id=pv><small id=fnFoto style=display:none;font-size:10px;color:#16b84a;text-align:center;margin-top:6px;font-weight:800>✔ Foto lista</small>
 
-<input id=cm placeholder="¿Dónde? Ej: Traki">
+<input id=cm placeholder="¿Dónde? Ej: Tienda, Restaurante...">
 <div class=dl><input id=mn type=number min=0 step=.01 placeholder=Monto><select id=mm><option value=bs>Bs</option><option value=usd>$</option></select></div>
 <small id=me style=color:#e63946;font-size:10px;display:none>Monto >0</small>
 <small id=cp style=font-size:11px;color:#0d5a2a;display:block;margin-top:6px></small>
 <input id=fe type=date><small id=fe2 style=color:#e63946;font-size:10px;display:none>No futuro</small>
 <input id=fn placeholder="Nº Factura (opcional)">
-<select id=ct><option>Comida</option><option>Trabajo</option><option>Transporte</option><option>Casa</option><option>Centro Guarenas</option><option>Otro</option></select>
+
+<select id=ct><option>Mercado</option><option>Servicios</option><option>Transporte</option><option>Alquiler</option><option>Educación</option><option>Salud</option><option>Diversion</option><option>Electrodomésticos</option><option>Deudas</option><option>Otro</option></select>
+
 <button class=bm id=btnSaveGasto onclick="sg()">💾 Guardar gasto</button>
 <button style=width:100%;margin-top:8px;padding:12px;border-radius:12px;border:0;background:#eee;font-weight:800 onclick="cm2()">Cancelar</button>
 </div></div>
 
-<div class=md id=mg><div class=sh><h3>🔒 ¿Este gasto tiene garantía?</h3><p style=font-size:12px;color:#666>Te avisamos cuando se vaya a vencer, con o sin foto</p><input id=gt placeholder=Tienda><input id=gm type=number min=1 placeholder=Meses garantía><input id=gp placeholder=Producto><button class=bm onclick="sg2()">Si, guardar garantía</button><button class="bm sec" onclick="cg2()">No, solo gasto</button></div></div>
+<div class=md id=mg><div class=sh><h3>🔒 ¿Articulo con garantía?</h3><p style=font-size:12px;color:#666>Te avisamos cuando se vaya a vencer, con o sin foto</p><input id=gt placeholder=Tienda><input id=gm type=number min=1 placeholder=Meses garantía><input id=gp placeholder=Producto><button class=bm onclick="sg2()">Si, guardar garantía</button><button class="bm sec" onclick="cg2()">No, solo gasto</button></div></div>
 
 <div class=md id=mcalc><div class=sh style=background:#fffaf0>
-<h3 style=color:#0d5a2a;text-align:center>💱 Calculadora</h3>
+<h3 style=color:#0d5a2a;text-align:center>💱 Cambio</h3>
 <div class=bcv-card style=margin-top:12px>
 <div class=bcv-top><div style=text-align:left><small style=font-weight:800;color:#6b7a70>💵 TASA BCV OFICIAL</small><br><b id=brC style=font-size:28px;color:#0d5a2a>---</b><br><small id=bfC style=font-size:9px></small></div><div style=width:44px;height:44px;background:#ffc107;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px>💹</div></div>
-<button class=btn-mini up style=margin-top:12px;width:100% onclick="bT(true)">🔄 Actualizar BCV ahora</button>
+<button class=btn-mini up style=margin-top:12px;width:100% onclick="bT(true)">🔄 Actualizar BCV</button>
 </div>
 <input id=calcIn type=number placeholder="Monto a convertir" style=margin-top:14px>
 <div style=display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px><button class=bm style=margin:0 onclick="calcBD()">Bs → $</button><button class=bm warn style=margin:0 onclick="calcDB()">$ → Bs</button></div>
@@ -80,7 +82,7 @@ function so(){
   localStorage.setItem('ct_config',JSON.stringify(C));updatePostConfig();cs();L();
 }
 function resetApp(){if(!confirm('¿Cerrar ciclo y empezar de 0?'))return;if(!confirm('Confirma de nuevo'))return;T.filter(x=>!x.esGarantia).forEach(x=>dT(x.id));T=T.filter(x=>x.esGarantia);localStorage.removeItem('ct_config');C=null;li.value='';updatePostConfig();document.getElementById('s').classList.remove('h');R();}
-function updatePostConfig(){const el=document.getElementById('postConfig');const btn=document.getElementById('btnGuardarTope');if(C){el.style.display='block';btn.innerText='💾 Actualizar tope (no borra gastos)';}else{el.style.display='none';btn.innerText='💾 GUARDAR Y EMPEZAR CICLO';}}
+function updatePostConfig(){const el=document.getElementById('postConfig');const btn=document.getElementById('btnGuardarTope');if(C){el.style.display='block';btn.innerText='💾 Actualizar';}else{el.style.display='none';btn.innerText='💾 GUARDAR Y EMPEZAR CICLO';}}
 (function initSplash(){if(C){document.getElementById('s').classList.add('h');li.value=C.limiteOriginal||'';lm.value=C.limiteMoneda||'bs';document.querySelectorAll('.cd').forEach(b=>b.classList.remove('a'));let e=document.getElementById('c-'+C.ciclo);if(e)e.classList.add('a');}updatePostConfig();})();
 async function L(){T=await gA();fe.max=TD;R();ck();bT()}function ck(){if(!C)return;const d={diario:1,semanal:7,mensual:30,anual:365}[C.ciclo]||30;const p=Math.floor((Date.now()-C.inicio)/86400000);pd.innerText=`Dia ${p} de ${d} • Tasa ${TB.toFixed(2)}`;if(p>=d&&confirm(`Ciclo ${C.ciclo} vencio ¿Cerrar?`)){const t=T.filter(x=>!x.esGarantia).reduce((a,b)=>a+b.monto,0);if(!C.historial)C.historial=[];C.historial.push({ciclo:C.ciclo,limite:C.limite,gastado:t,cierre:Date.now()});T.filter(x=>!x.esGarantia).forEach(x=>dT(x.id));T=T.filter(x=>x.esGarantia);C.inicio=Date.now();localStorage.setItem('ct_config',JSON.stringify(C));R();}}
 async function bT(force=false){const u=()=>{br.innerText=TB.toFixed(2);brS.innerText=TB.toFixed(2);brC.innerText=TB.toFixed(2);bf.innerText=FB;bfS.innerText=FB;bfC.innerText=FB;R()};if(force){bf.innerText='actualizando...';bfS.innerText='...';bfC.innerText='...';}try{const r=await fetch('https://datos.cromstudio.com.ve/tasa');const j=await r.json();let us=j.tasas?.USD||j.USD;if(typeof us=='string')us=parseFloat(us.replace(',','.'));if(us&&us>10){TB=us;FB=j.fecha_valor||j.fecha||new Date().toLocaleDateString()}else throw 0}catch{try{const r2=await fetch('https://ve.dolarapi.com/v1/dolares/oficial');const j2=await r2.json();let us=j2.promedio||j2.price;if(us){TB=parseFloat(us);FB=j2.fechaActualizacion||new Date().toLocaleDateString()}}catch{}}localStorage.setItem('bcv_tasa',TB);localStorage.setItem('bcv_fecha',FB);u();}
